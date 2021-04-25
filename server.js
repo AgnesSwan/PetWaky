@@ -2,8 +2,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRouter from './routers/userRouter.js';
 import adRouter from './routers/adRouter.js';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const app=express();
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
+
 mongoose.connect(
     'mongodb+srv://ness:haslo123@syrenka.6l7qa.mongodb.net/ads?retryWrites=true&w=majority',
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, }
