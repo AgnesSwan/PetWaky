@@ -2,14 +2,13 @@ import mongoose from 'mongoose';
 
 const adSchema = new mongoose.Schema(
     {
+        _id: mongoose.Types.ObjectId,
+
         title: {
             type:String,
             required:true,
         },
-        image: {
-            type: String,
-            required:true,
-        },
+    
         category: {
             type:String,
             required:true,
@@ -21,22 +20,7 @@ const adSchema = new mongoose.Schema(
         price: {
             type:Number,
             required:true,
-        }, 
-        city: {
-            type:String,
-            required:true,
-        },
-        petType: {
-            type:String,
-            required:true,
-        },
-        size: {
-            type:String,
-            required:true,
         }
-    },
-    {
-        timestamps: true,
     }
 );
 
